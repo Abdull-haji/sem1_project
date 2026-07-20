@@ -97,12 +97,10 @@ function App() {
           if (entry.isIntersecting) {
             setActiveSection(entry.target.id);
             entry.target.classList.add('visible');
-          } else {
-            entry.target.classList.remove('visible');
           }
         });
       },
-      { threshold: 0.4 }
+      { threshold: 0.2 }
     );
 
     sections.forEach((section) => observer.observe(section));
@@ -137,7 +135,7 @@ function App() {
                 </div>
               </div>
               <div className="col-lg-6">
-                <HeroCarousel slides={allLocalImages.slice(0, 4)} />
+                <HeroCarousel />
               </div>
             </div>
           </div>
