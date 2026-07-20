@@ -1,0 +1,84 @@
+{
+  "beaches": [
+    {
+      "id": 1,
+      "name": "Santorini Cove",
+      "country": "Greece",
+      "zone": "North",
+      "description": "A dramatic whitewashed shoreline with endless sunsets and crystalline waters.",
+      "attractions": ["Sunset cruises", "Cliffside dining", "Cycladic villages"],
+      "bestTime": "May to September",
+      "image": "photo-1746288864318-aa0926e06763.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Caspian Pearl",
+      "country": "Azerbaijan",
+      "zone": "North",
+      "description": "A serene beach framed by mountains and a rich cultural coastline.",
+      "attractions": ["Cultural heritage tours", "Mountain viewpoints", "Beachside cafes"],
+      "bestTime": "June to August",
+      "image": "photo-1642963036551-cf15c2dcab46.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Tropic Haven",
+      "country": "Brazil",
+      "zone": "South",
+      "description": "A vibrant southern shoreline known for sculpted dunes and tropical energy.",
+      "attractions": ["Dune walks", "Oceanfront nightlife", "Marine wildlife tours"],
+      "bestTime": "December to March",
+      "image": "photo-1626951876321-3b7137628f83.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Coral Drift",
+      "country": "Australia",
+      "zone": "South",
+      "description": "A rugged, sunlit coast with coral reefs and eco-luxury retreats.",
+      "attractions": ["Snorkeling", "Coastal walks", "Wildlife safaris"],
+      "bestTime": "September to April",
+      "image": "photo-1603477849227-705c424d1d80.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Golden Horizon",
+      "country": "Japan",
+      "zone": "East",
+      "description": "An elegant beach destination where sunrise meets modern coastal culture.",
+      "attractions": ["Sunrise viewing", "Local seafood", "Art districts"],
+      "bestTime": "May to October",
+      "image": "photo-1586500036065-bdaeac7a4feb.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Azure Bay",
+      "country": "Philippines",
+      "zone": "East",
+      "description": "A postcard-perfect bay filled with clear water and island adventure.",
+      "attractions": ["Island hopping", "Hidden lagoons", "Beach yoga"],
+      "bestTime": "November to May",
+      "image": "photo-1579622754173-e2a9aad270e3.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Desert Tide",
+      "country": "Morocco",
+      "zone": "West",
+      "description": "A striking beach with dunes meeting the Atlantic and refined desert style.",
+      "attractions": ["Camel treks", "Desert camps", "Surf lessons"],
+      "bestTime": "March to June",
+      "image": "photo-1556103727-777acb371272.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Pacific Lure",
+      "country": "Canada",
+      "zone": "West",
+      "description": "A dramatic, windswept coastline known for polished shores and scenic vistas.",
+      "attractions": ["Forest trails", "Whale watching", "Lighthouse stops"],
+      "bestTime": "June to September",
+      "image": "photo-1551523713-c1473aa01d9f.jpg"
+    }
+  ]
+}

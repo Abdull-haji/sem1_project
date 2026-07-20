@@ -1,0 +1,172 @@
+:root {
+  color-scheme: dark;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #07111f, #1d3557);
+  color: #f4f7fb;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #214a6f 0%, #07111f 65%);
+  color: #f4f7fb;
+}
+
+* { box-sizing: border-box; }
+a { text-decoration: none; }
+button { border: none; }
+
+.app-shell { min-height: 100vh; }
+.hero-hero { background: transparent; }
+.section { scroll-margin-top: 90px; }
+.home-hero {
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(120deg, rgba(3,16,31,0.93), rgba(18,49,85,0.78));
+}
+
+.glass-nav, .glass-card, .top-bar, .ticker-bar {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 10px 35px rgba(0,0,0,0.18);
+}
+
+.glass-nav { padding: 0.8rem 0; }
+.top-bar { border-top: 1px solid rgba(255,255,255,0.08); }
+.ticker-bar { position: sticky; bottom: 0; z-index: 100; }
+
+/* Ticker scrolling animation */
+.ticker-bar { overflow: hidden; }
+.ticker-bar .container { overflow: hidden; }
+.ticker-bar .ticker-scroll {
+  display: inline-block;
+  white-space: nowrap;
+  animation: ticker-scroll 8s linear infinite;
+}
+
+@keyframes ticker-scroll {
+  from { transform: translateX(100%); }
+  to { transform: translateX(-100%); }
+}
+
+/* Mobile nav fade for Bootstrap collapse */
+.navbar-collapse { transition: opacity 0.3s ease; opacity: 0; }
+.navbar-collapse.show { opacity: 1; }
+
+/* Section fade-in on scroll */
+.section { opacity: 0; transform: translateY(12px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.section.visible { opacity: 1; transform: translateY(0); }
+
+.brand-mark { font-size: 1.4rem; }
+.nav-link {
+  color: rgba(255,255,255,0.88) !important;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+.nav-link:hover, .nav-link.active {
+  color: #7dd3fc !important;
+  transform: translateY(-1px);
+}
+
+.eyebrow {
+  display: inline-block;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-size: 0.76rem;
+  color: #7dd3fc;
+  margin-bottom: 0.6rem;
+}
+.section-title {
+  font-size: clamp(1.7rem, 2.4vw, 2.4rem);
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.hero-carousel {
+  position: relative;
+  height: 460px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.28);
+}
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+}
+.hero-slide.active { opacity: 1; }
+.hero-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 1.25rem;
+  background: linear-gradient(0deg, rgba(3,16,31,0.78), transparent 70%);
+}
+.hero-overlay h3 { font-size: 1.5rem; font-weight: 700; }
+
+.beach-card { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+.beach-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 35px rgba(0,0,0,0.24);
+}
+.beach-image {
+  height: 220px;
+  object-fit: cover;
+}
+
+.gallery-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  cursor: pointer;
+  min-height: 220px;
+}
+.gallery-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+.gallery-card:hover img { transform: scale(1.06); }
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.28);
+  color: white;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+.gallery-card:hover .gallery-overlay { opacity: 1; }
+.lightbox-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.86);
+  display: grid;
+  place-items: center;
+  z-index: 2000;
+  padding: 1.5rem;
+}
+.lightbox-image {
+  max-width: 100%;
+  max-height: 90vh;
+  border-radius: 18px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+}
+.form-message { color: #7dd3fc; }
+
+@media (max-width: 768px) {
+  .home-hero { min-height: auto; padding: 2rem 0; }
+  .hero-carousel { height: 320px; }
+}
