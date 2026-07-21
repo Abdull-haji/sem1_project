@@ -8,6 +8,7 @@ function GallerySection({ images }) {
       <div className="row g-4">
         {images.map((image, index) => (
           <div className="col-sm-6 col-lg-4" key={`${image}-${index}`}>
+            {/* Click to open image in fullscreen lightbox */}
             <div className="gallery-card" onClick={() => setSelectedImage(image)}>
               <img src={image} alt={`Beach view ${index + 1}`} />
               <div className="gallery-overlay">Preview</div>
@@ -16,6 +17,7 @@ function GallerySection({ images }) {
         ))}
       </div>
 
+      {/* Full-screen image viewer, click backdrop to close */}
       {selectedImage && (
         <div className="lightbox-backdrop" onClick={() => setSelectedImage(null)}>
           <img src={selectedImage} alt="Large preview" className="lightbox-image" />

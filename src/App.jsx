@@ -56,8 +56,10 @@ const imageMap = {
   'photo-1461301214746-1e109215d6d3.jpg': beachFourteen,
 };
 
+// Beach zones displayed in this order
 const zoneOrder = ['North', 'South', 'East', 'West'];
 
+// Shows organization contact info in a card
 function OrgContact() {
   return (
     <div className="glass-card p-4">
@@ -75,6 +77,7 @@ function App() {
   const [feedbackMessage, setFeedbackMessage] = useState('');
   const [contactMessage, setContactMessage] = useState('');
 
+  // Maps beach images from JSON to the imported image files
   const beaches = useMemo(() => {
     return beachData.beaches.map((beach) => ({
       ...beach,
@@ -89,6 +92,7 @@ function App() {
     setVisitorCount(nextCount);
   }, []);
 
+  // Watches which section is in view and highlights it in navigation
   useEffect(() => {
     const sections = document.querySelectorAll('section[id]');
     const observer = new IntersectionObserver(
@@ -107,6 +111,7 @@ function App() {
     return () => observer.disconnect();
   }, []);
 
+  // Scrolls smoothly to a section by its ID
   const scrollToSection = (id) => {
     const target = document.getElementById(id);
     if (target) {
@@ -151,6 +156,7 @@ function App() {
                 </div>
               </div>
               <div className="row g-4">
+                {/* Filters beaches by their zone */}
                 {beaches.filter((beach) => beach.zone === zone).map((beach) => (
                   <div className="col-md-6 col-xl-4" key={beach.id}>
                     <BeachCard beach={beach} />
@@ -210,6 +216,7 @@ function App() {
                 <p className="text-muted">We’ll help you choose the ideal destination, ideal time, and travel style for your next coastal getaway.</p>
               </div>
               <div className="col-lg-7">
+                {/* Shows success message on form submission */}
                 <form className="glass-card p-4" onSubmit={(event) => { event.preventDefault(); setQueryMessage('Your query has been received. Our concierge will respond shortly.'); }}>
                   <div className="mb-3">
                     <label className="form-label">Name</label>
@@ -240,6 +247,7 @@ function App() {
                 <p className="text-muted">Share your experience so we can keep curating more refined beach stories and recommendations.</p>
               </div>
               <div className="col-lg-7">
+                {/* Shows success message on form submission */}
                 <form className="glass-card p-4" onSubmit={(event) => { event.preventDefault(); setFeedbackMessage('Thank you for your feedback. We appreciate your insight.'); }}>
                   <div className="mb-3">
                     <label className="form-label">How did you enjoy the experience?</label>
@@ -271,6 +279,7 @@ function App() {
                 <OrgContact />
               </div>
               <div className="col-lg-7">
+                {/* Shows success message on form submission */}
                 <form className="glass-card p-4" onSubmit={(event) => { event.preventDefault(); setContactMessage('We will be in touch shortly with your tailored travel plan.'); }}>
                   <div className="mb-3">
                     <label className="form-label">Full Name</label>
@@ -315,6 +324,7 @@ function App() {
         </section>
 
         <section id="advertisement" className="section">
+          {/* Promotional cards for flights, bus services, and travel packages */}
           <div className="container py-5">
             <span className="eyebrow">Travel offers</span>
             <h2 className="section-title">Luxury travel plans for every horizon</h2>

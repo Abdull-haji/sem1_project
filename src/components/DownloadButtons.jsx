@@ -2,7 +2,9 @@ import { jsPDF } from 'jspdf';
 import { Document, Packer, Paragraph, TextRun } from 'docx';
 
 function DownloadButtons({ beaches }) {
+  // Generates a PDF file with all beach information, adds new pages if content gets too long
   const createPdf = () => {
+  
     const doc = new jsPDF();
     let y = 14;
     doc.setFontSize(12);
@@ -19,6 +21,7 @@ function DownloadButtons({ beaches }) {
     doc.save('beaches.pdf');
   };
 
+  // Generates a Word document with beach data and triggers download. Has error handling for older browsers.
   const createDocx = async () => {
     const doc = new Document({ sections: [{ children: [] }] });
     beaches.forEach((beach) => {

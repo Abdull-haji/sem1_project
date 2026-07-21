@@ -4,6 +4,7 @@ import heroTwo from '../../pics/photo-1642963036551-cf15c2dcab46.jpg';
 import heroThree from '../../pics/photo-1626951876321-3b7137628f83.jpg';
 import heroFour from '../../pics/photo-1603477849227-705c424d1d80.jpg';
 
+// Default carousel slides if none are provided
 const defaultSlides = [
   { title: 'Sun-kissed coastlines', image: heroOne },
   { title: 'Azure escape routes', image: heroTwo },
@@ -14,6 +15,7 @@ const defaultSlides = [
 function HeroCarousel({ slides = defaultSlides }) {
   const [active, setActive] = useState(0);
 
+  // Auto-rotate carousel every 4 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setActive((current) => (current + 1) % slides.length);

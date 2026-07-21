@@ -4,11 +4,13 @@ function Ticker() {
   const [dateTime, setDateTime] = useState(new Date());
   const [location, setLocation] = useState('Location unavailable');
 
+  // Updates clock every second
   useEffect(() => {
     const timer = setInterval(() => setDateTime(new Date()), 1000);
     return () => clearInterval(timer);
   }, []);
 
+  // Fetches location on mount, shows permission error if denied
   useEffect(() => {
     if (!navigator.geolocation) return;
     const id = navigator.geolocation.getCurrentPosition(

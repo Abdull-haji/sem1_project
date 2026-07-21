@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 function Header({ activeSection, onNavigate, visitorCount }) {
   const [location, setLocation] = useState('Detecting location...');
 
+  // Grabs the visitor's coordinates on mount, falls back to a message if denied
   useEffect(() => {
     if (!navigator.geolocation) {
       setLocation('Location unavailable');
@@ -20,6 +21,7 @@ function Header({ activeSection, onNavigate, visitorCount }) {
     );
   }, []);
 
+  // Navigation menu items for scrolling to different sections
   const navItems = [
     { id: 'home', label: 'Home' },
     { id: 'north', label: 'North' },
